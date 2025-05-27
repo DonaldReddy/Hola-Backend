@@ -3,14 +3,12 @@ import WSSession from "../models/WSSession.schema.js";
 async function createNewWSSession(req, res) {
 	try {
 		const { userName, wsId } = req.body;
-		console.log("received ws session", { userName, wsId });
 
 		await WSSession.findOneAndUpdate(
 			{ userName },
 			{ wsId },
 			{ upsert: true, new: true, setDefaultsOnInsert: true },
 		);
-		console.log("saved ws session", { userName, wsId });
 
 		res.status(200).send({ status: true });
 	} catch (error) {
