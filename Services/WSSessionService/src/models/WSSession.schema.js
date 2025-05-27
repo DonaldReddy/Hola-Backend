@@ -9,7 +9,6 @@ const WStSessionSchema = new mongoose.Schema(
 		},
 		wsId: {
 			type: String,
-			unique: true,
 			required: true,
 		},
 	},
