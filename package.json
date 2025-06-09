@@ -4,10 +4,14 @@
 	"main": "services.js",
 	"type": "module",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"dev": "concurrently \"cd ./APIGateway && npm run dev\" \"cd ./Services/ChatsService && npm run dev\" \"cd ./Services/FriendRequestService && npm run dev\" \"cd ./Services/GroupInvitesService && npm run dev\" \"cd ./Services/GroupService && npm run dev\" \"cd ./Services/MessagesService && npm run dev\" \"cd ./Services/SessionService && npm run dev\" \"cd ./Services/UserService && npm run dev\" \"cd ./Services/WebSocketServer && npm run dev\" \"cd ./Services/WSSessionService && npm run dev\""
 	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
-	"description": ""
+	"description": "",
+	"dependencies": {
+		"concurrently": "^9.1.2"
+	}
 }
